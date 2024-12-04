@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   root.appendChild(content);
 
   // Render myip (tunggu async selesai)
-  const footer = document.createElement("div");
-  footer.innerHTML = await Myip();
-  root.appendChild(footer);
+  const myip = document.createElement("div");
+  myip.innerHTML = await Myip();
+  root.appendChild(myip);
 });
