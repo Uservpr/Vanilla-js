@@ -4,18 +4,22 @@ import Myip from "./components/myip.js";
 document.addEventListener("DOMContentLoaded", async () => {
   const root = document.getElementById("root");
 
-  // Render Navbar
+  // Navbar
   root.innerHTML = Navbar();
 
-  // Tambah konten utama
-  const content = document.createElement("div");
-  content.innerHTML = `
-    <h1>what's my ip</h1>
-  `;
-  root.appendChild(content);
+  // Loading
+  const loading = document.createElement("div");
+  loading.className = "container text-center my-5";
+  loading.innerHTML = `<div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div>`;
+  root.appendChild(loading);
 
-  // Render myip (tunggu async selesai)
-  const myip = document.createElement("div");
-  myip.innerHTML = await Myip();
-  root.appendChild(myip);
+  // Fetch & Render IP Info
+  const myipHTML = await Myip();
+  loading.outerHTML = myipHTML;
+
+  // Footer
+  const footer = document.createElement("footer");
+  footer.className = "text-center text-muted my-4";
+  footer.innerHTML = `Made with my-ip.io by Dany dev`;
+  document.body.appendChild(footer);
 });

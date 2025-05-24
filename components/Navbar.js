@@ -1,8 +1,8 @@
 function Navbar() {
   return `
-    <nav class="navbar sticky-top bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Sticky top</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">What's My IP</a>
       </div>
     </nav>
   `;
